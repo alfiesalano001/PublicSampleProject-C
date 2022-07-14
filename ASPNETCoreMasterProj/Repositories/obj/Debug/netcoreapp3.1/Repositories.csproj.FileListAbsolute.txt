@@ -1,0 +1,16 @@
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\bin\Debug\netcoreapp3.1\Repositories.deps.json
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\bin\Debug\netcoreapp3.1\Repositories.runtimeconfig.json
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\bin\Debug\netcoreapp3.1\Repositories.runtimeconfig.dev.json
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\bin\Debug\netcoreapp3.1\Repositories.dll
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\bin\Debug\netcoreapp3.1\Repositories.pdb
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\bin\Debug\netcoreapp3.1\DomainModels.dll
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\bin\Debug\netcoreapp3.1\DomainModels.pdb
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\obj\Debug\netcoreapp3.1\Repositories.csproj.AssemblyReference.cache
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\obj\Debug\netcoreapp3.1\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\obj\Debug\netcoreapp3.1\Repositories.AssemblyInfoInputs.cache
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\obj\Debug\netcoreapp3.1\Repositories.AssemblyInfo.cs
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\obj\Debug\netcoreapp3.1\Repositories.csproj.CoreCompileInputs.cache
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\obj\Debug\netcoreapp3.1\Repositories.csproj.CopyComplete
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\obj\Debug\netcoreapp3.1\Repositories.dll
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\obj\Debug\netcoreapp3.1\Repositories.pdb
+C:\_publicSampleC#\ASPNETCoreMasterProj\Repositories\obj\Debug\netcoreapp3.1\Repositories.genruntimeconfig.cache

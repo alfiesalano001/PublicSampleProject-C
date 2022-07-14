@@ -1,0 +1,10 @@
+C:\_publicSampleC#\ASPNETCoreMasterProj\DomainModels\bin\Debug\netstandard2.0\DomainModels.deps.json
+C:\_publicSampleC#\ASPNETCoreMasterProj\DomainModels\bin\Debug\netstandard2.0\DomainModels.dll
+C:\_publicSampleC#\ASPNETCoreMasterProj\DomainModels\bin\Debug\netstandard2.0\DomainModels.pdb
+C:\_publicSampleC#\ASPNETCoreMasterProj\DomainModels\obj\Debug\netstandard2.0\DomainModels.csproj.AssemblyReference.cache
+C:\_publicSampleC#\ASPNETCoreMasterProj\DomainModels\obj\Debug\netstandard2.0\DomainModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\_publicSampleC#\ASPNETCoreMasterProj\DomainModels\obj\Debug\netstandard2.0\DomainModels.AssemblyInfoInputs.cache
+C:\_publicSampleC#\ASPNETCoreMasterProj\DomainModels\obj\Debug\netstandard2.0\DomainModels.AssemblyInfo.cs
+C:\_publicSampleC#\ASPNETCoreMasterProj\DomainModels\obj\Debug\netstandard2.0\DomainModels.csproj.CoreCompileInputs.cache
+C:\_publicSampleC#\ASPNETCoreMasterProj\DomainModels\obj\Debug\netstandard2.0\DomainModels.dll
+C:\_publicSampleC#\ASPNETCoreMasterProj\DomainModels\obj\Debug\netstandard2.0\DomainModels.pdb
