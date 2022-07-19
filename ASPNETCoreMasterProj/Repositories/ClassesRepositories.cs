@@ -1,4 +1,5 @@
 ﻿using DomainModels.Entity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Repositories.Interface;
 using System;
@@ -13,24 +14,34 @@ namespace Repositories
         {
         }
 
-        public override Task<ClassName> Add(ClassName entity)
-        {
-            throw new NotImplementedException();
+        public override async Task<ClassName> Add(ClassName entity)
+        {            
+            _dBContext.ClassNames.Add(entity);
+            await _dBContext.SaveChangesAsync();
+            return FindById(entity.Id);
         }
 
-        public override Task Delete(int id)
+        public override async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            var items = FindById(id);
+            _dBContext.Remove(items);
+            await _dBContext.SaveChangesAsync();
         }
 
         public override IQueryable<ClassName> GetAll()
+             => _dBContext.ClassNames;
+
+        public override async Task<ClassName> Update(ClassName entity)
         {
-            throw new NotImplementedException();
+            _dBContext.ClassNames.Update(entity);
+            await _dBContext.SaveChangesAsync();
+            return FindById(entity.Id);
         }
 
-        public override Task<ClassName> Update(ClassName entity)
-        {
-            throw new NotImplementedException();
-        }
+        public IQueryable<ClassName> GetAllIncludingStudents()
+            => GetAll().Include(x => x.Students).OrderByDescending(s => s.SubjectName);
+
+        public ClassName FindById(int id)
+            => _dBContext.ClassNames.Find(id);
     }
 }

@@ -13,5 +13,6 @@ namespace Repositories.Interface
         Task<ClassName> Update(ClassName entity);
         IQueryable<ClassName> GetAll();
         Task Delete(int id);
+        IQueryable<ClassName> GetAllIncludingStudents();
     }
 }

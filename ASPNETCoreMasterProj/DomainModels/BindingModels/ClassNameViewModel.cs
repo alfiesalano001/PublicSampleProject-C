@@ -16,6 +16,6 @@ namespace DomainModels.BindingModels
 
         [Required(ErrorMessage = "This SubjectName name is required.")]
         public SubjectName SubjectName { get; set; }
-        public IEnumerable<StudentViewModel> Students { get; set; }
+        public IEnumerable<StudentViewModel> Students { get; private set; }
     }
 }

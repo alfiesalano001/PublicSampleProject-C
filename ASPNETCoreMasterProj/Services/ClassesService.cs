@@ -1,36 +1,47 @@
 ﻿using AutoMapper;
 using DomainModels.BindingModels;
+using DomainModels.Entity;
 using Microsoft.Extensions.Logging;
 using Services.Interface;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Services
 {
     public class ClassesService : ServiceBase<ClassesService>, IClassesService
     {
-        public ClassesService(IMapper mapper, ILogger<ClassesService> logger)
+        private readonly Repositories.Interface.IClassesRepositories _classesRepo;
+
+        public ClassesService(IMapper mapper, ILogger<ClassesService> logger, Repositories.Interface.IClassesRepositories classesRepositories)
           : base(mapper, logger)
         {
-
+            _classesRepo = classesRepositories;
         }
 
         public async Task<ClassNameViewModel> CreateUpdate(ClassNameViewModel className)
         {
-            var map = _mapper.Map<ClassNameViewModel>(className);
-            //var result = _studentRepo.GetAll().FirstOrDefault(a => a.LastName == student.LastName && a.ClassNameId == student.ClassNameId);
+            var map = _mapper.Map<ClassName>(className);
+            var result = _classesRepo.GetAll().FirstOrDefault(a => a.SubjectName == className.SubjectName);
 
-            //if (result != null)
-            //{
-            //    result.Age = student.Age;
-            //    result.GPA = student.GPA;
-            //    result = await _studentRepo.Update(result);
-            //}
-            //else
-            //    result = await _studentRepo.Add(map);
+            if (result != null)
+            {
+                result.Location = className.Location;
+                result.TeacherName = className.TeacherName;
+                result = await _classesRepo.Update(result);
+            }
+            else
+                result = await _classesRepo.Add(map);
 
-            //var toReturn = _mapper.Map<StudentViewModel>(result);
-            //return toReturn;
-            return null;
+            var toReturn = _mapper.Map<ClassNameViewModel>(result);
+            return toReturn;
         }
+
+        public IEnumerable<ClassNameViewModel> GetAllIncludingStudents()
+            => _mapper.Map<IEnumerable<ClassNameViewModel>>(_classesRepo.GetAllIncludingStudents());
+
+
+        public IEnumerable<ClassNameViewModel> GetAll()
+            => _mapper.Map<IEnumerable<ClassNameViewModel>>(_classesRepo.GetAll()) ?? new List<ClassNameViewModel>();
     }
 }

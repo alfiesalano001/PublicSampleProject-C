@@ -21,16 +21,11 @@ namespace CoreProject.Controllers
 
         [HttpGet("GetAllStudents")]
         public IActionResult GetAll()
-
         {
             try
             {
-                //var items = _menuService.GetAllMenuItem();
-
-                //if (items == null)
-                //    return new NotFoundResult();
-
-                return Ok();
+                var response = _studentService.GetAll();
+                return Ok(response);
             }
 
             catch (Exception ex)

@@ -35,6 +35,7 @@ namespace Repositories
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<ApplicationUser, IdentityRole>()
                  .AddEntityFrameworkStores<AppDBContext>()
@@ -46,10 +47,10 @@ namespace Repositories
             });
            
             services.AddScoped<IAuthJWToken, AuthJWToken>();
-            services.AddScoped<IClassesService, ClassesService>();
+            services.AddScoped<Services.Interface.IClassesService, ClassesService>();
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IStudentRepositories, StudentRepositories>();
-            services.AddScoped<IClassesRepositories, ClassesRepositories>();
+            services.AddScoped<Interface.IClassesRepositories, ClassesRepositories>();
 
             services.AddSwaggerGen(options =>
             {

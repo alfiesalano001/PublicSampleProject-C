@@ -1,4 +1,6 @@
-﻿using DomainModels.Enum;
+﻿using DomainModels.BindingModels;
+using DomainModels.Enum;
+using System.Collections.Generic;
 
 namespace DomainModels.Entity
 {
@@ -7,5 +9,7 @@ namespace DomainModels.Entity
         public string Location { get; set; }
         public string TeacherName { get; set; }
         public SubjectName SubjectName { get; set; }
+        public ICollection<Student> Students { get; set; }
     }
 }
+

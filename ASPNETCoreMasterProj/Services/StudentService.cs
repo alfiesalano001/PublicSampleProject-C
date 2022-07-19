@@ -4,10 +4,8 @@ using DomainModels.Entity;
 using Microsoft.Extensions.Logging;
 using Repositories.Interface;
 using Services.Interface;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Services
@@ -44,5 +42,44 @@ namespace Services
 
         public async Task Delete(int id)
             => await _studentRepo.Delete(id);
+
+        public IEnumerable<StudentViewModel> GetAll()
+            => _mapper.Map<IEnumerable<StudentViewModel>>(_studentRepo.GetAll()) ?? new List<StudentViewModel>();
+
+        public int solution(int[] A)
+        {
+            // write your code in C# 6.0 with .NET 4.5 (Mono)
+            int sizeNumber = Enumerable.Range(1, 100000).Except(A).Min();
+            return sizeNumber;
+
+        }
+
+        public string rett(int inputvalue)
+        {
+            if (inputvalue < 0 && inputvalue > 200)
+                return "";
+
+            string[] stringValue = { "+", "-", "-"};
+            string str = "";
+            int count = 0;
+
+            for (int x = 0; x <= inputvalue; x++)
+            {
+                if (count <= 2)
+                {
+                    str += stringValue[count];
+                    count++;
+                } 
+                else
+                {
+                    count = 0;
+                    str += stringValue[count];
+                    count++;
+                }
+                
+            }
+
+            return str;
+        }
     }
 }

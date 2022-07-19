@@ -64,6 +64,8 @@ namespace Repositories.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClassNameId");
+
                     b.ToTable("Students");
                 });
 
@@ -278,6 +280,15 @@ namespace Repositories.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("DomainModels.Entity.Student", b =>
+                {
+                    b.HasOne("DomainModels.Entity.ClassName", null)
+                        .WithMany("Students")
+                        .HasForeignKey("ClassNameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -327,6 +338,11 @@ namespace Repositories.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DomainModels.Entity.ClassName", b =>
+                {
+                    b.Navigation("Students");
                 });
 #pragma warning restore 612, 618
         }

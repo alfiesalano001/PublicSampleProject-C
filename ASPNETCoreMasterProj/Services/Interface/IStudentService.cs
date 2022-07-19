@@ -10,5 +10,6 @@ namespace Services.Interface
     {
         Task<StudentViewModel> CreateUpdate(StudentViewModel student);
         Task Delete(int id);
+        IEnumerable<StudentViewModel> GetAll();
     }
 }
